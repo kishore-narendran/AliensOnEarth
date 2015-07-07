@@ -57,5 +57,5 @@ var checkContinue = function(err, result) {
 
 console.log("************************************************".red);
 console.log("*******      Enter Alien Details         *******".red);
-console.log("************************************************".red);
+console.log("************************************************".red +  "\n\n");
 prompt.get(['codeName', 'bloodColour', 'noOfAntennas', 'noOfLegs', 'homePlanet'], acceptAlienDetails);
