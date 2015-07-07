@@ -31,9 +31,16 @@ Please report any bugs or issues [here](https://github.com/kishore-narendran/Ali
 
 ### Instructions for writing plugins:
 
+##### Adding support for new format generation plugin- 
+
+1. Add `generate-<FORMAT NAME>.js` file
+2. Write a function `var generate<FORMAT NAME> = function(alienDetails)`, for example - `var generatePdf = function(alienDetails)`
+3. Export function using `module.exports = generate<FORMAT NAME>`, for example - `module.exports = generatePdf;`
+
+For reference, [see this!](https://github.com/kishore-narendran/AliensOnEarth/blob/master/generate-pdf.js)
+
 ##### Adding support for new command line arguments 
 
-Add `{ name: "<FORMAT NAME HERE>", type: Boolean, alias: "<SINGLE LETTER FORMAT DENOTION FOR COMMAND LINE>"}` to the `commandLineArguments` variable of the `command-line-arguments.js` file.
+Add `{ name: "<FORMAT NAME>", type: Boolean, alias: "<SINGLE LETTER FORMAT DENOTION FOR COMMAND LINE>"}` to the `commandLineArguments` variable of the `command-line-arguments.js` file.
 
 Example - `{ name: "pdf", type: Boolean, alias: "p"}`
-
