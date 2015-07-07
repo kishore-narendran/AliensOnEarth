@@ -40,6 +40,7 @@ Please report any bugs or issues [here](https://github.com/kishore-narendran/Ali
 For reference, [see this!](https://github.com/kishore-narendran/AliensOnEarth/blob/master/generate-pdf.js)
 
 alienDetails - is a JSON Array parameter that contains all the alien details that have been accepted by the console application
+An example, is as shown below
 
 ```
 alienDetails: [
