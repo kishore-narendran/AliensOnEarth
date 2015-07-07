@@ -1,8 +1,8 @@
 'use strict';
 
-var commandLineArgumets = [
+var commandLineArguments = [
     { name: "pdf", type: Boolean, alias: "p"},
     { name: "text", type: Boolean, alias: "t"}
 ];
 
-module.exports = commandLineArgumets;
+module.exports = commandLineArguments;

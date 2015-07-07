@@ -1,17 +1,35 @@
+'use strict';
+var path = require("path");
+var fs = require("fs");
 var cliArgs = require("command-line-args");
-var commandLineArgumets = require("./command-line-arguments");
+var commandLineArguments = require("./command-line-arguments");
 var prompt = require("prompt");
 var colors = require("colors/safe");
  
 /* Using the command line options from the command-line-arguments file */
-var cli = cliArgs(commandLineArgumets);
+var cli = cliArgs(commandLineArguments);
 
 /* Parsing command-line values */
 var options = cli.parse();
 
+/* Creating output folder */
+var stats = fs.lstatSync(path.join(__dirname, "output"));
+if (!(stats.isDirectory())) {
+	fs.mkdirSync(path.join(__dirname, "output"));
+}
+
+
 prompt.start();
-
-
+var alienDetails = [];
+var exportDetails = function() {
+	for(var i = 0; i < commandLineArguments.length; i++) {
+		var argumentName = commandLineArguments[i].name;
+		if(options[argumentName] == true) {
+			var exportFunction = require('./generate-'+argumentName);
+			exportFunction(alienDetails);
+		}
+	} 
+};
 var acceptAlienDetails = function(err, result) {
 	if(err) {
 		console.log(err);
@@ -22,7 +40,7 @@ var acceptAlienDetails = function(err, result) {
 		console.log("Enter ".blue + "Y".yellow + " to add another alien's details".blue);
 		prompt.get(['continue'], checkContinue);
 	}
-}
+};
 var checkContinue = function(err, result) {
 	if(err) {
 		console.log(err);
@@ -32,13 +50,13 @@ var checkContinue = function(err, result) {
 		prompt.get(['codeName', 'bloodColour', 'noOfAntennas', 'noOfLegs', 'homePlanet'], acceptAlienDetails);
 	}
 	else {
-		console.log("Thank you for entering the alien details!");
+		console.log("Thank you for entering the alien details!".green);
 		console.log(alienDetails);
+		exportDetails();
 	}
-}
+};
 
 console.log("************************************************".red);
 console.log("*******      Enter Alien Details         *******".red);
 console.log("************************************************".red);
-var alienDetails = [];
 prompt.get(['codeName', 'bloodColour', 'noOfAntennas', 'noOfLegs', 'homePlanet'], acceptAlienDetails);
