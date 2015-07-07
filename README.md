@@ -17,7 +17,9 @@ Please report any bugs or issues [here](https://github.com/kishore-narendran/Ali
 ##### Run the application and generate a PDF file
     $ node aliens -p
 
-All generated files will go to the output directory
+
+### Note about the generated output files:
+##### All generated files will go to the output directory
 
     |-- aliens.js
     |-- command-line-arguments.js
@@ -27,4 +29,11 @@ All generated files will go to the output directory
     |-- output
     |   |-- ALL GENERATED FILES WILL APPEAR HERE!
 
-#####
+### Instructions for writing plugins:
+
+##### Adding support for new command line arguments 
+
+Add `{ name: "<FORMAT NAME HERE>", type: Boolean, alias: "<SINGLE LETTER FORMAT DENOTION FOR COMMAND LINE>"}` to the `commandLineArguments` variable of the `command-line-arguments.js` file.
+
+Example - `{ name: "pdf", type: Boolean, alias: "p"}`
+
