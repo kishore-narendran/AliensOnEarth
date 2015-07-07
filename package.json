@@ -1,0 +1,28 @@
+{
+  "name": "AliensOnEarth",
+  "version": "0.1.1",
+  "description": "A console application that accepts Alien details and exports the same into a file of a certain format.",
+  "bugs": {
+    "url": "https://github.com/kishore-narendran/VITauth-Backend/issues",
+    "email": "kishore.narendran09@gmail.com"
+  },
+  "private": true,
+  "scripts": {
+    "start": "node aliens"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kishore-narendran/VITauth-Backend.git"
+  },
+  "main": "aliens",
+  "engines": {
+    "iojs": "stable"
+  },
+  "contributors": {
+    "name": "Kishore Narendran",
+    "email": "kishore.narendran09@gmail.com"
+  },
+  "dependencies": {
+    "command-line-args": "^0.5.9"
+  }
+}
