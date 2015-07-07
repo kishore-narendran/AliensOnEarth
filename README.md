@@ -18,13 +18,13 @@ Please report any bugs or issues [here](https://github.com/kishore-narendran/Ali
     $ node aliens -p
 
 All generated files will go to the output directory
-|--aliens.js
-|--command-line-arguments.js
-|--generate-pdf.js
-|--generate-text.js
-|--package.json
-|--output
-	|--ALL GENERATED FILES WILL APPEAR HERE!
 
+    |-- aliens.js
+    |-- command-line-arguments.js
+    |-- generate-pdf.js
+    |-- generate-text.js
+    |-- package.json
+    |-- output
+    |   |-- ALL GENERATED FILES WILL APPEAR HERE!
 
 #####
