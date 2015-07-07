@@ -1,6 +1,7 @@
 'use strict';
 var fs = require('fs');
 var path = require('path');
+var colors = require("colors/safe");
 
 var generateText = function(alienDetails) {
 
@@ -17,7 +18,7 @@ var generateText = function(alienDetails) {
 			throw err;
 		}
 		else {
-			console.log('Text file generated!');	
+			console.log('Text file generated!'.cyan);	
 		}
 	});
 };

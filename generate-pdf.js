@@ -2,6 +2,8 @@
 var PDFDocument = require('pdfkit');
 var fs = require('fs');
 var path = require('path');
+var colors = require("colors/safe");
+
 
 var generatePdf = function(alienDetails) {
 
@@ -16,7 +18,7 @@ var generatePdf = function(alienDetails) {
 	doc.pipe(fs.createWriteStream(path.join(__dirname, 'output', 'alien-details.pdf')));
 	doc.text(allAlienDetailsStr);
 	doc.end();
-	console.log('PDF file generated!');
+	console.log('PDF file generated!'.cyan);
 
 };
 

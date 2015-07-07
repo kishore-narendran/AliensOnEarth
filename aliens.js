@@ -51,7 +51,6 @@ var checkContinue = function(err, result) {
 	}
 	else {
 		console.log("Thank you for entering the alien details!".green);
-		console.log(alienDetails);
 		exportDetails();
 	}
 };
