@@ -39,6 +39,27 @@ Please report any bugs or issues [here](https://github.com/kishore-narendran/Ali
 
 For reference, [see this!](https://github.com/kishore-narendran/AliensOnEarth/blob/master/generate-pdf.js)
 
+alienDetails - is a JSON Array parameter that contains all the alien details that have been accepted by the console application
+
+```
+alienDetails: [
+	{
+		"codeName": "Kishore",
+		"bloodColour": "red",
+		"noOfAntennas": "4",
+		"noOfLegs": "6",
+		"homePlanet": "Mars"
+	},
+	{
+		"codeName": "Erohsik",
+		"bloodColour": "blue",
+		"noOfAntennas": "7",
+		"noOfLegs": "9",
+		"homePlanet": "Neptune"
+	}
+]
+```
+
 ##### Adding support for new command line arguments 
 
 Add `{ name: "<FORMAT NAME>", type: Boolean, alias: "<SINGLE LETTER FORMAT DENOTION FOR COMMAND LINE>"}` to the `commandLineArguments` variable of the `command-line-arguments.js` file.
