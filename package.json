@@ -23,6 +23,8 @@
     "email": "kishore.narendran09@gmail.com"
   },
   "dependencies": {
-    "command-line-args": "^0.5.9"
+    "colors": "^1.1.2",
+    "command-line-args": "^0.5.9",
+    "prompt": "^0.2.14"
   }
 }
