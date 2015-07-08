@@ -15,7 +15,7 @@ var generatePdf = function(alienDetails) {
 		allAlienDetailsStr += (alienDetail.codeName + ' ' + alienDetail.bloodColour + ' ' + alienDetail.noOfAntennas + ' ' + alienDetail.noOfLegs + ' ' + alienDetail.homePlanet);
 	}
 	var doc = new PDFDocument();
-	doc.pipe(fs.createWriteStream(path.join(__dirname, 'output', 'alien-details.pdf')));
+	doc.pipe(fs.createWriteStream(path.join(__dirname, '..', 'output', 'alien-details.pdf')));
 	doc.text(allAlienDetailsStr);
 	doc.end();
 	console.log('PDF file generated!'.cyan);

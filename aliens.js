@@ -18,14 +18,13 @@ if (!(stats.isDirectory())) {
 	fs.mkdirSync(path.join(__dirname, "output"));
 }
 
-
 prompt.start();
 var alienDetails = [];
 var exportDetails = function() {
 	for(var i = 0; i < commandLineArguments.length; i++) {
 		var argumentName = commandLineArguments[i].name;
 		if(options[argumentName] == true) {
-			var exportFunction = require('./generate-'+argumentName);
+			var exportFunction = require(path.join(__dirname, 'generators', 'generate-'+argumentName));
 			exportFunction(alienDetails);
 		}
 	} 
