@@ -3,6 +3,7 @@ var path = require("path");
 var fs = require("fs");
 var cliArgs = require("command-line-args");
 var commandLineArguments = require("./command-line-arguments");
+var alienParameters = require(path.join(__dirname, 'alien-parameters'));
 var prompt = require("prompt");
 var colors = require("colors/safe");
  
@@ -20,7 +21,6 @@ if (!(stats.isDirectory())) {
 
 prompt.start();
 var alienDetails = [];
-var alienParameters = ['codeName', 'bloodColour', 'noOfAntennas', 'noOfLegs', 'homePlanet'];
 
 var exportDetails = function() {
 	for(var i = 0; i < commandLineArguments.length; i++) {
@@ -31,6 +31,7 @@ var exportDetails = function() {
 		}
 	} 
 };
+
 var acceptAlienDetails = function(err, result) {
 	if(err) {
 		console.log(err);
@@ -42,13 +43,14 @@ var acceptAlienDetails = function(err, result) {
 		prompt.get(['continue'], checkContinue);
 	}
 };
-var checkContinue = function(err, result) {
-	if(err) {
+
+var checkContinue = function(err, result, firstFlag) {
+	if(result.continue == "Y" || firstFlag) {
+		prompt.get(alienParameters, acceptAlienDetails);
+	}
+	else if(err){
 		console.log(err);
 		process.exit();
-	}
-	else if(result.continue == "Y"){
-		prompt.get(alienParameters, acceptAlienDetails);
 	}
 	else {
 		console.log("Thank you for entering the alien details!".green);
@@ -59,4 +61,4 @@ var checkContinue = function(err, result) {
 console.log("************************************************".red);
 console.log("*******      Enter Alien Details         *******".red);
 console.log("************************************************".red +  "\n\n");
-prompt.get(alienParameters, acceptAlienDetails);
+checkContinue(null, {}, true);
