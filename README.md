@@ -23,8 +23,9 @@ Please report any bugs or issues [here](https://github.com/kishore-narendran/Ali
 
     |-- aliens.js
     |-- command-line-arguments.js
-    |-- generate-pdf.js
-    |-- generate-text.js
+    |--	generators
+    |	|-- generate-pdf.js
+    |	|-- generate-text.js
     |-- package.json
     |-- output
     |   |-- ALL GENERATED FILES WILL APPEAR HERE!
@@ -33,11 +34,11 @@ Please report any bugs or issues [here](https://github.com/kishore-narendran/Ali
 
 ##### Adding support for new format generation plugin- 
 
-1. Add `generate-<FORMAT NAME>.js` file
+1. Add `generate-<FORMAT NAME>.js` file in the `generators` directory
 2. Write a function `var generate<FORMAT NAME> = function(alienDetails)`, for example - `var generatePdf = function(alienDetails)`
 3. Export function using `module.exports = generate<FORMAT NAME>`, for example - `module.exports = generatePdf;`
 
-For reference, [see this!](https://github.com/kishore-narendran/AliensOnEarth/blob/master/generate-pdf.js)
+For reference, [see this!](https://github.com/kishore-narendran/AliensOnEarth/blob/master/generators/generate-pdf.js)
 
 alienDetails - is a JSON Array parameter that contains all the alien details that have been accepted by the console application
 An example, is as shown below
