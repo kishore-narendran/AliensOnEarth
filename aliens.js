@@ -1,11 +1,11 @@
 'use strict';
-var path = require("path");
-var fs = require("fs");
-var cliArgs = require("command-line-args");
-var commandLineArguments = require("./command-line-arguments");
+var path = require('path');
+var fs = require('fs');
+var cliArgs = require('command-line-args');
+var commandLineArguments = require(path.join('command-line-arguments'));
 var alienParameters = require(path.join(__dirname, 'alien-parameters'));
-var prompt = require("prompt");
-var colors = require("colors/safe");
+var prompt = require('prompt');
+var colors = require('colors/safe');
  
 /* Using the command line options from the command-line-arguments file */
 var cli = cliArgs(commandLineArguments);
@@ -14,9 +14,9 @@ var cli = cliArgs(commandLineArguments);
 var options = cli.parse();
 
 /* Creating output folder */
-var stats = fs.lstatSync(path.join(__dirname, "output"));
+var stats = fs.lstatSync(path.join(__dirname, 'output'));
 if (!(stats.isDirectory())) {
-	fs.mkdirSync(path.join(__dirname, "output"));
+	fs.mkdirSync(path.join(__dirname, 'output'));
 }
 
 prompt.start();
@@ -39,13 +39,13 @@ var acceptAlienDetails = function(err, result) {
 	}
 	else {
 		alienDetails.push(result);
-		console.log("Enter ".blue + "Y".yellow + " to add another alien's details".blue);
+		console.log('Enter '.blue + 'Y'.yellow + ' to add another alien\'s details'.blue);
 		prompt.get(['continue'], checkContinue);
 	}
 };
 
 var checkContinue = function(err, result, firstFlag) {
-	if(result.continue == "Y" || firstFlag) {
+	if(result.continue == 'Y' || firstFlag) {
 		prompt.get(alienParameters, acceptAlienDetails);
 	}
 	else if(err){
@@ -53,12 +53,12 @@ var checkContinue = function(err, result, firstFlag) {
 		process.exit();
 	}
 	else {
-		console.log("Thank you for entering the alien details!".green);
+		console.log('Thank you for entering the alien details!'.green);
 		exportDetails();
 	}
 };
 
-console.log("************************************************".red);
-console.log("*******      Enter Alien Details         *******".red);
-console.log("************************************************".red +  "\n\n");
+console.log('************************************************'.red);
+console.log('*******      Enter Alien Details         *******'.red);
+console.log('************************************************'.red +  '\n\n');
 checkContinue(null, {}, true);
