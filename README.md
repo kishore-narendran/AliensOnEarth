@@ -27,6 +27,7 @@ Please report any bugs or issues [here](https://github.com/kishore-narendran/Ali
     |	|-- generate-pdf.js
     |	|-- generate-text.js
     |-- package.json
+    |-- alien-parameters.js
     |-- output
     |   |-- ALL GENERATED FILES WILL APPEAR HERE!
 
@@ -67,3 +68,8 @@ alienDetails: [
 Add `{ name: "<FORMAT NAME>", type: Boolean, alias: "<SINGLE LETTER FORMAT DENOTION FOR COMMAND LINE>"}` to the `commandLineArguments` variable of the `command-line-arguments.js` file.
 
 Example - `{ name: "pdf", type: Boolean, alias: "p"}`
+
+
+### Adding more parameters for alien details:
+
+Add the parameter as a string to the `alienParameters` array in the `alien-parameters.js` file
