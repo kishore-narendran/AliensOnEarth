@@ -2,7 +2,7 @@
 var path = require('path');
 var fs = require('fs');
 var cliArgs = require('command-line-args');
-var commandLineArguments = require(path.join('command-line-arguments'));
+var commandLineArguments = require(path.join(__dirname, 'command-line-arguments'));
 var alienParameters = require(path.join(__dirname, 'alien-parameters'));
 var prompt = require('prompt');
 var colors = require('colors/safe');
