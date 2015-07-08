@@ -20,6 +20,8 @@ if (!(stats.isDirectory())) {
 
 prompt.start();
 var alienDetails = [];
+var alienParameters = ['codeName', 'bloodColour', 'noOfAntennas', 'noOfLegs', 'homePlanet'];
+
 var exportDetails = function() {
 	for(var i = 0; i < commandLineArguments.length; i++) {
 		var argumentName = commandLineArguments[i].name;
@@ -46,7 +48,7 @@ var checkContinue = function(err, result) {
 		process.exit();
 	}
 	else if(result.continue == "Y"){
-		prompt.get(['codeName', 'bloodColour', 'noOfAntennas', 'noOfLegs', 'homePlanet'], acceptAlienDetails);
+		prompt.get(alienParameters, acceptAlienDetails);
 	}
 	else {
 		console.log("Thank you for entering the alien details!".green);
@@ -57,4 +59,4 @@ var checkContinue = function(err, result) {
 console.log("************************************************".red);
 console.log("*******      Enter Alien Details         *******".red);
 console.log("************************************************".red +  "\n\n");
-prompt.get(['codeName', 'bloodColour', 'noOfAntennas', 'noOfLegs', 'homePlanet'], acceptAlienDetails);
+prompt.get(alienParameters, acceptAlienDetails);
