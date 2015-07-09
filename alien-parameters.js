@@ -1,10 +1,10 @@
 'use strict';
 var alienParameters = [
-	'codeName', 
-	'bloodColour', 
-	'noOfAntennas', 
-	'noOfLegs', 
-	'homePlanet'
+	'Code Name', 
+	'Blood Colour', 
+	'Number of Antennas', 
+	'Number of Legs', 
+	'Home Planet'
 ];
 
 module.exports = alienParameters;

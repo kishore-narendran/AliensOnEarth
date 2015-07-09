@@ -9,7 +9,7 @@ var generateText = function(alienDetails) {
 	var allAlienDetailsStr = "";
 	for(var i = 0; i < alienDetailsLength; i++) {
 		var alienDetail = alienDetails[i];
-		allAlienDetailsStr += alienDetail.codeName + "\t" + alienDetail.bloodColour + "\t" + alienDetail.noOfAntennas + "\t" + alienDetail.noOfLegs + "\t" + alienDetail.homePlanet;
+		allAlienDetailsStr += alienDetail['Code Name'] + "\t" + alienDetail['Blood Colour'] + "\t" + alienDetail['Number of Antennas'] + "\t" + alienDetail['Number of Legs'] + "\t" + alienDetail['Home Planet'];
 		allAlienDetailsStr += "\r\n";
 	}
 	fs.writeFile(path.join(__dirname, '..', 'output', 'alient-details.txt'), allAlienDetailsStr, function (err) {

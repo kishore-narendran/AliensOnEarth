@@ -12,7 +12,7 @@ var generatePdf = function(alienDetails) {
 	for(var i = 0; i < alienDetailsLength; i++) {
 		var alienDetail = alienDetails[i];
 		allAlienDetailsStr += '\n';
-		allAlienDetailsStr += (alienDetail.codeName + ' ' + alienDetail.bloodColour + ' ' + alienDetail.noOfAntennas + ' ' + alienDetail.noOfLegs + ' ' + alienDetail.homePlanet);
+		allAlienDetailsStr += (alienDetail['Code Name'] + ' ' + alienDetail['Blood Colour'] + ' ' + alienDetail['Number of Antennas'] + ' ' + alienDetail['Number of Legs'] + ' ' + alienDetail['Home Planet']);
 	}
 	var doc = new PDFDocument();
 	doc.pipe(fs.createWriteStream(path.join(__dirname, '..', 'output', 'alien-details.pdf')));
