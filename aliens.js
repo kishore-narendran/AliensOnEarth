@@ -2,11 +2,14 @@
 var path = require('path');
 var fs = require('fs');
 var cliArgs = require('command-line-args');
-var commandLineArguments = require(path.join(__dirname, 'command-line-arguments'));
+var commandLineArguments = require(path.join(__dirname, 'command-line-arguments')).commandLineArguments;
 var alienParameters = require(path.join(__dirname, 'alien-parameters'));
+var updateCommandLineArguments = require(path.join(__dirname, 'update-command-line-arguments'));
 var prompt = require('prompt');
 var colors = require('colors/safe');
- 
+
+updateCommandLineArguments();
+
 /* Using the command line options from the command-line-arguments file */
 var cli = cliArgs(commandLineArguments);
 
