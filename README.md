@@ -34,14 +34,15 @@ Please report any bugs or issues [here](https://github.com/kishore-narendran/Ali
 
 ### Instructions for writing plugins:
 
-##### Adding support for new format generation plugin- 
+##### Writing new format generation plugin file- 
 
-1. Add `generate-<FORMAT NAME>.js` file in the `generators` directory
+1. Create a `<PLUGIN FILE NAME>.js` file
 2. Write a function `var generate<FORMAT NAME> = function(alienDetails)`, for example - `var generatePdf = function(alienDetails)`
-3. Export function using `module.exports = generate<FORMAT NAME>`, for example - `module.exports = generatePdf;`
+2. Export function using `module.exports = generate<FORMAT NAME>`, for example - `module.exports = generatePdf;`
 
 For reference, [see this!](https://github.com/kishore-narendran/AliensOnEarth/blob/master/generators/generate-pdf.js)
 
+For reference,
 alienDetails - is a JSON Array parameter that contains all the alien details that have been accepted by the console application
 An example, is as shown below
 
@@ -64,7 +65,10 @@ alienDetails: [
 ]
 ```
 
-##### Once a format generation plugin has been added to the `generators` folder, the corresponding command line argument to generate that format at runtime is `--<FORMAT NAME>`. As an example, for the generator `generator-pdf.js`, the command line argument is `--pdf`
+##### Adding the generator for use- 
+	$ node add-generator.js -f <FORMAT NAME> -p <FULL PATH TO PLUGIN FILE>
+
+##### Once a format generation plugin has been added using the `add-generator.js` file, the corresponding command line argument to generate that format at runtime is `--<FORMAT NAME>`. As an example, for the generator `generator-pdf.js`, the command line argument is `--pdf`
 
 
 ### Adding more parameters for alien details:
