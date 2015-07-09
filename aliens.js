@@ -43,11 +43,11 @@ var acceptAlienDetails = function(err, result) {
 	else {
 		alienDetails.push(result);
 		console.log('Enter '.blue + 'Y'.yellow + ' to add another alien\'s details'.blue);
-		prompt.get(['continue'], checkContinue);
+		prompt.get(['continue'], startOrContinue);
 	}
 };
 
-var checkContinue = function(err, result, firstFlag) {
+var startOrContinue = function(err, result, firstFlag) {
 	if(result.continue == 'Y' || firstFlag) {
 		prompt.get(alienParameters, acceptAlienDetails);
 	}
@@ -64,4 +64,4 @@ var checkContinue = function(err, result, firstFlag) {
 console.log('************************************************'.red);
 console.log('*******      Enter Alien Details         *******'.red);
 console.log('************************************************'.red +  '\n\n');
-checkContinue(null, {}, true);
+startOrContinue(null, {}, true);
