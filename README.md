@@ -64,7 +64,7 @@ alienDetails: [
 ]
 ```
 
-###### Once a format generation plugin ahs been added to the `generators` folder, the corresponding command line argument to generate that format at runtime is `--<FORMAT NAME>`. As an example, for the generator `generator-pdf.js`, the command line argument is `--pdf`
+##### Once a format generation plugin has been added to the `generators` folder, the corresponding command line argument to generate that format at runtime is `--<FORMAT NAME>`. As an example, for the generator `generator-pdf.js`, the command line argument is `--pdf`
 
 
 ### Adding more parameters for alien details:
