@@ -47,18 +47,18 @@ An example, is as shown below
 ```
 alienDetails: [
 	{
-		"codeName": "Jar Jar Binks",
-		"bloodColour": "red",
-		"noOfAntennas": "2",
-		"noOfLegs": "2",
-		"homePlanet": "Naboo"
+		"Code Name": "Jar Jar Binks",
+		"Blood Colour": "red",
+		"Number of Antennas": "2",
+		"Number of Legs": "2",
+		"Home Planet": "Naboo"
 	},
 	{
-		"codeName": "Jaba the Hutt",
-		"bloodColour": "green",
-		"noOfAntennas": "0",
-		"noOfLegs": "2",
-		"homePlanet": "Tattooine"
+		"Code Name": "Jaba the Hutt",
+		"Blood Colour": "green",
+		"Number of Antennas": "0",
+		"Number of Legs": "2",
+		"Home Planet": "Tattooine"
 	}
 ]
 ```
