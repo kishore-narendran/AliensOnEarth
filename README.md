@@ -13,9 +13,9 @@ Please report any bugs or issues [here](https://github.com/kishore-narendran/Ali
 ##### Run the application
     $ node aliens
 ##### Run the application and generate a text file
-    $ node aliens -t
+    $ node aliens --text
 ##### Run the application and generate a PDF file
-    $ node aliens -p
+    $ node aliens --pdf
 
 
 ### Note about the generated output files:
@@ -23,6 +23,7 @@ Please report any bugs or issues [here](https://github.com/kishore-narendran/Ali
 
     |-- aliens.js
     |-- command-line-arguments.js
+    |-- update-command-line-arguments.js
     |--	generators
     |	|-- generate-pdf.js
     |	|-- generate-text.js
@@ -63,11 +64,7 @@ alienDetails: [
 ]
 ```
 
-##### Adding support for new command line arguments 
-
-Add `{ name: "<FORMAT NAME>", type: Boolean, alias: "<SINGLE LETTER FORMAT DENOTION FOR COMMAND LINE>"}` to the `commandLineArguments` variable of the `command-line-arguments.js` file.
-
-Example - `{ name: "pdf", type: Boolean, alias: "p"}`
+###### Once a format generation plugin ahs been added to the `generators` folder, the corresponding command line argument to generate that format at runtime is `--<FORMAT NAME>`. As an example, for the generator `generator-pdf.js`, the command line argument is `--pdf`
 
 
 ### Adding more parameters for alien details:
