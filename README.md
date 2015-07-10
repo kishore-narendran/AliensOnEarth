@@ -22,6 +22,7 @@ Please report any bugs or issues [here](https://github.com/kishore-narendran/Ali
 ##### All generated files will go to the output directory
 
     |-- aliens.js
+    |-- add-generator.js
     |-- command-line-arguments.js
     |-- update-command-line-arguments.js
     |--	generators
@@ -43,7 +44,7 @@ Please report any bugs or issues [here](https://github.com/kishore-narendran/Ali
 For reference, [see this!](https://github.com/kishore-narendran/AliensOnEarth/blob/master/generators/generate-pdf.js)
 
 For reference,
-alienDetails - is a JSON Array parameter that contains all the alien details that have been accepted by the console application
+alienDetails - is a JSON Array parameter that contains all the alien details that have been accepted by the console application, with keys as specified by the `alien-parameters.js` file.
 An example, is as shown below
 
 ```
