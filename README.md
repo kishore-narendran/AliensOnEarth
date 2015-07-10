@@ -29,7 +29,7 @@ Please report any bugs or issues [here](https://github.com/kishore-narendran/Ali
     |	|-- generate-pdf.js
     |	|-- generate-text.js
     |-- package.json
-    |-- alien-parameters.js
+    |-- alien-details.js
     |-- output
     |   |-- ALL GENERATED FILES WILL APPEAR HERE!
 
@@ -44,7 +44,7 @@ Please report any bugs or issues [here](https://github.com/kishore-narendran/Ali
 For reference, [see this!](https://github.com/kishore-narendran/AliensOnEarth/blob/master/generators/generate-pdf.js)
 
 For reference,
-alienDetails - is a JSON Array parameter that contains all the alien details that have been accepted by the console application, with keys as specified by the `alien-parameters.js` file.
+alienDetails - is a JSON Array parameter that contains all the alien details that have been accepted by the console application, with keys as specified by the `alien-details.js` file.
 An example, is as shown below
 
 ```
@@ -74,4 +74,4 @@ alienDetails: [
 
 ### Adding more parameters for alien details:
 
-Add the parameter as a string to the `alienParameters` array in the `alien-parameters.js` file
+Add the parameter as a key-value pair to the `alienDetails` Javascript object in the `alien-details.js` file by the following specification - `'<PARAMETER NAME>': []`. For example, `'Number of Eyes: []`.

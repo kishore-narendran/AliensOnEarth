@@ -1,5 +1,5 @@
 'use strict';
-var alienParameters = {
+var alienDetails = {
 	'Code Name': [], 
 	'Blood Colour': [], 
 	'Number of Antennas': [], 
@@ -7,4 +7,4 @@ var alienParameters = {
 	'Home Planet': []
 };
 
-module.exports = alienParameters;
+module.exports = alienDetails;
