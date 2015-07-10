@@ -38,32 +38,24 @@ Please report any bugs or issues [here](https://github.com/kishore-narendran/Ali
 ##### Writing new format generation plugin file- 
 
 1. Create a `<PLUGIN FILE NAME>.js` file
-2. Write a function `var generate<FORMAT NAME> = function(alienDetails)`, for example - `var generatePdf = function(alienDetails)`
+2. Write a function `var generate<FORMAT NAME> = function(alienDetails, numberOfAliens)`, for example - `var generatePdf = function(alienDetails, numberOfAliens)`
 2. Export function using `module.exports = generate<FORMAT NAME>`, for example - `module.exports = generatePdf;`
 
 For reference, [see this!](https://github.com/kishore-narendran/AliensOnEarth/blob/master/generators/generate-pdf.js)
 
 For reference,
-alienDetails - is a JSON Array parameter that contains all the alien details that have been accepted by the console application, with keys as specified by the `alien-details.js` file.
+alienDetails - is a JSON Object that contains all the alien details that have been accepted by the console application, with keys as specified by the `alien-details.js` file and the corresponding values are the accepted details store sequentially.
 An example, is as shown below
 
 ```
-alienDetails: [
-	{
-		"Code Name": "Jar Jar Binks",
-		"Blood Colour": "red",
-		"Number of Antennas": "2",
-		"Number of Legs": "2",
-		"Home Planet": "Naboo"
-	},
-	{
-		"Code Name": "Jaba the Hutt",
-		"Blood Colour": "green",
-		"Number of Antennas": "0",
-		"Number of Legs": "2",
-		"Home Planet": "Tattooine"
-	}
-]
+alienDetails = {
+	'Code Name': ["Jar Jar Binks", "Jaba the Hutt"], 
+	'Blood Colour': ["red", "green"], 
+	'Number of Antennas': ["2", "0"], 
+	'Number of Legs': ["2", "2"], 
+	'Home Planet': ["Naboo", "Tattooine"]
+};
+
 ```
 
 ##### Adding the generator for use- 
